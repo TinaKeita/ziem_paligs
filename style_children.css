@@ -10,7 +10,7 @@ body {
     align-items: center;
     justify-content: flex-start; 
     position: relative;
-    overflow: hidden; 
+    overflow: auto;  /*lai var scrolot */
 }
 
 h2 {
@@ -23,6 +23,9 @@ h2 {
     z-index: 10; 
 }
 
+h4{
+    color:black;
+}
 ul {
     list-style-type: circle;
     padding-left: 20px;
@@ -48,11 +51,69 @@ ul li {
 /* sniegpārslas kritīs no augšas kad nokritīs zemē */
 @keyframes fall {
     0% {
-        transform: translateY(-100px); /* Sāk virs ekrana */
+        transform: translateY(-150px); /* Sāk virs ekrana */
         opacity: 1;
     }
     100% {
         transform: translateY(100vh); /* nokrīt līdz ekrāna apakšai */
         opacity: 0;
     }
+}
+/* Bernu kartinas */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin-top: 30px;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #ff4d4d;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    z-index: 10;
+}
+
+.card h3 {
+    color: #781919;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px #000000;
+}
+
+.card p {
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: #ff4d4d;
+    border-radius: 5px;
+}
+.letter-card {
+    background-color: #f5cfcf;
+    border: 1px sloid rgb(243, 216, 216);
+    padding: 5px;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-size: 1rem;
+    white-space: pre-wrap; 
 }
