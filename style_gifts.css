@@ -1,20 +1,20 @@
 body {
-    background: linear-gradient(to right, #000033, #000066, #001a33); 
+    background: linear-gradient(to right, #5e7dff, #8e9eff, #3b5a99); /* Gaišāks un tumšāks zils gradient */
     font-size: 20px;
     font-family: 'Consolas', sans-serif;
     color: white; 
-    min-height: 100vh; /*pievieno ekrānu ārpus redzesloka*/
+    min-height: 100vh;
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start; 
     position: relative;
-    overflow: auto; 
+    overflow: auto;
 }
 
 h2 {
-    color: #ff0000; 
+    color: #ff0000; /* Sarkans virsrakstam */
     font-family: 'Georgia', serif;
     text-shadow: 2px 2px 4px #000; 
     text-align: center; 
@@ -32,8 +32,36 @@ ol {
 
 ol li {
     margin-bottom: 10px;
+    font-size: 1.2rem; /* Palielināts fonta izmērs */
+    background-color: #2d3b55; /* Tumša fonu dāvanām */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+ol li:hover {
+    background-color: #3e4e70; /* Gaišāks pelēks, kad norakstīts */
+}
+
+li span {
+    font-weight: bold; /* Padara pieprasījuma un atlikušā daudzuma tekstu treknāku */
+    color: #ffcc00; /* Zelta krāsa */
+}
+
+li .status {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+li .status.enough {
+    color: green; /* Zaļā krāsa, ja ir pietiekami daudz dāvanu */
+}
+
+li .status.not-enough {
+    color: red; /* Sarkanā krāsa, ja nav pietiekami daudz dāvanu */
+}
+
+/* Sniegpārslas stili */
 .snowflake {
     position: absolute;
     color: white;
@@ -42,7 +70,6 @@ ol li {
     opacity: 0.9;
     z-index: 1; 
 }
-
 
 @keyframes fall {
     0% {
